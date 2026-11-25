@@ -1,0 +1,105 @@
+.category-chart-card {
+  /* matches .dash-card */
+}
+
+.chart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 180px;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  border: 1px dashed var(--color-border);
+}
+
+.chart-empty-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.chart-empty-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.category-chart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.category-donut-wrapper {
+  width: 100%;
+  height: 200px;
+}
+
+/* Legend */
+.category-breakdown-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.category-legend-item:hover {
+  background: var(--color-bg-raised);
+}
+
+.category-legend-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.category-legend-dot {
+  --legend-color: #94a3b8;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--legend-color);
+  flex-shrink: 0;
+}
+
+.category-legend-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.category-legend-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.category-legend-pct {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  min-width: 2.5ch;
+  text-align: right;
+}
+
+.category-legend-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}

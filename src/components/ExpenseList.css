@@ -1,0 +1,226 @@
+.transactions-card {
+  /* extends .dash-card */
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-fast);
+}
+
+.transaction-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.transaction-row:hover {
+  background: var(--color-bg-raised);
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Icon */
+.transaction-icon {
+  --tx-color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tx-color) 14%, transparent);
+  color: var(--tx-color);
+  flex-shrink: 0;
+}
+
+.transaction-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Info */
+.transaction-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.transaction-note {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.transaction-date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Amount + delete */
+.transaction-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.transaction-amount {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--red-500);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.transaction-amount--income {
+  color: var(--color-success);
+}
+
+.transaction-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  gap: 2px;
+}
+
+.filter-tab-btn {
+  padding: 0.35rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: calc(var(--radius-md) - 2px);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+}
+
+.filter-tab-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.filter-tab-btn--active {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.transactions-view-all-btn {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+}
+
+.transactions-view-all-btn:hover {
+  background: var(--color-bg-raised);
+  border-color: var(--color-primary);
+}
+
+.transaction-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.transaction-type-badge--income {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-success);
+}
+
+.transaction-type-badge--expense {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--color-danger);
+}
+
+.transaction-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.transaction-row:hover .transaction-delete-btn {
+  opacity: 1;
+}
+
+.transaction-delete-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.transaction-delete-btn:hover {
+  background: var(--color-danger-bg);
+  border-color: var(--color-danger-border);
+  color: var(--color-danger);
+}
+
+.transaction-delete-btn:focus-visible {
+  outline: 2px solid var(--color-danger);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+@media (max-width: 540px) {
+  .transaction-amount {
+    font-size: 0.875rem;
+  }
+
+  .transaction-delete-btn {
+    opacity: 1;
+  }
+}

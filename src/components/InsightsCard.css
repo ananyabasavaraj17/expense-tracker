@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Personal Insights Card Styles
+   ========================================================================== */
+
+.insights-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.insights-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.insights-icon-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insights-icon-mark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.insights-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.insights-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin: 0.15rem 0 0 0;
+}
+
+.insights-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.insight-item:hover {
+  border-color: var(--color-border-focus);
+}
+
+.insight-item-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-item-icon--orange {
+  background: rgba(249, 115, 22, 0.15);
+  color: var(--color-primary);
+}
+
+.insight-item-icon--green {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+}
+
+.insight-item-icon--blue {
+  background: rgba(2, 132, 199, 0.15);
+  color: #0284c7;
+}
+
+.insight-item-icon--red {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+}
+
+.insight-item-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.insight-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.insight-item-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.insight-item-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.insight-item-text strong {
+  font-weight: 700;
+}

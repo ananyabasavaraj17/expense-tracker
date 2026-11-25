@@ -1,0 +1,179 @@
+/* ============================================================
+   Design tokens — light + dark mode
+   ============================================================ */
+:root {
+  /* Palette */
+  --navy-950: #0a1628;
+  --navy-900: #0f2040;
+  --navy-800: #1a3356;
+  --navy-700: #24466e;
+  --navy-600: #2e5a87;
+
+  --orange-500: #f97316;
+  --orange-400: #fb923c;
+  --orange-300: #fdba74;
+  --orange-50:  #fff7ed;
+
+  --blue-600: #2563eb;
+  --blue-500: #3b82f6;
+  --blue-400: #60a5fa;
+  --blue-200: #bfdbfe;
+  --blue-100: #dbeafe;
+  --blue-50:  #eff6ff;
+
+  --green-500: #22c55e;
+  --green-100: #dcfce7;
+  --green-700: #15803d;
+
+  --red-500:  #ef4444;
+  --red-100:  #fee2e2;
+  --red-700:  #b91c1c;
+
+  --slate-50:  #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  /* Semantic tokens — light mode */
+  --color-bg-app:       #f0f4f8;
+  --color-bg-surface:   #ffffff;
+  --color-bg-raised:    #f8fafc;
+  --color-bg-nav:       var(--navy-900);
+
+  --color-border:       #e2e8f0;
+  --color-border-focus: var(--blue-500);
+
+  --color-text-primary:   #0f2040;
+  --color-text-secondary: #64748b;
+  --color-text-muted:     #94a3b8;
+  --color-text-inverse:   #ffffff;
+  --color-text-on-orange: #ffffff;
+
+  --color-accent:         var(--orange-500);
+  --color-accent-hover:   var(--orange-400);
+  --color-accent-subtle:  var(--orange-50);
+
+  --color-primary:        var(--blue-500);
+  --color-primary-hover:  var(--blue-600);
+  --color-primary-subtle: var(--blue-50);
+
+  --color-success:        var(--green-500);
+  --color-success-bg:     var(--green-100);
+  --color-success-text:   var(--green-700);
+
+  --color-danger:         var(--red-500);
+  --color-danger-bg:      var(--red-100);
+  --color-danger-text:    var(--red-700);
+  --color-danger-border:  #fca5a5;
+
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-blue-200: var(--blue-200);
+  --color-blue-400: var(--blue-400);
+  --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
+  --color-border-subtle: var(--color-border);
+  --color-bg-page: var(--color-bg-app);
+
+  /* Shadows */
+  --shadow-sm:     0 1px 3px rgba(15,32,64,.06), 0 1px 2px rgba(15,32,64,.04);
+  --shadow-md:     0 4px 12px rgba(15,32,64,.08), 0 2px 4px rgba(15,32,64,.04);
+  --shadow-lg:     0 12px 32px rgba(15,32,64,.10), 0 4px 8px rgba(15,32,64,.05);
+  --shadow-navbar: var(--shadow-md);
+  --shadow-card:   var(--shadow-md);
+  --shadow-modal:  0 24px 56px rgba(10,22,40,.22);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.14s ease;
+  --transition-base: 0.2s ease;
+}
+
+/* ── Dark mode ─────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --color-bg-app:          #0d1b2a;
+  --color-bg-surface:      #162032;
+  --color-bg-raised:       #1c2d44;
+  --color-bg-nav:          #0a1628;
+
+  --color-border:          #243550;
+  --color-border-subtle:   #243550;
+
+  --color-text-primary:    #e8f0f8;
+  --color-text-secondary:  #8ca3bf;
+  --color-text-muted:      #5c7a99;
+
+  --color-accent-subtle:   rgba(249,115,22,.12);
+  --color-primary-subtle:  rgba(59,130,246,.12);
+
+  --color-success-bg:      rgba(34,197,94,.12);
+  --color-success-text:    #4ade80;
+
+  --color-danger-bg:       rgba(239,68,68,.12);
+  --color-danger-text:     #f87171;
+  --color-danger-border:   rgba(239,68,68,.3);
+
+  --shadow-sm:     0 1px 3px rgba(0,0,0,.3);
+  --shadow-md:     0 4px 12px rgba(0,0,0,.35);
+  --shadow-lg:     0 12px 32px rgba(0,0,0,.4);
+  --shadow-modal:  0 24px 56px rgba(0,0,0,.55);
+
+  --color-bg-page: var(--color-bg-app);
+  --color-bg-surface: var(--color-bg-surface);
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Utility ────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

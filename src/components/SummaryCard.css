@@ -1,0 +1,228 @@
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Individual stat card */
+.stat-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.stat-card--accent {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
+  border-color: var(--navy-800);
+  color: #ffffff;
+}
+
+.stat-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.stat-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.stat-icon--orange { background: rgba(249,115,22,.14); color: var(--orange-500); }
+.stat-icon--blue   { background: var(--color-primary-subtle); color: var(--blue-500); }
+.stat-icon--green  { background: var(--color-success-bg); color: var(--color-success); }
+.stat-icon--purple { background: rgba(139,92,246,.12); color: #8b5cf6; }
+.stat-icon--red    { background: var(--color-danger-bg); color: var(--color-danger); }
+
+.stat-card--accent .stat-card-icon {
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.9);
+}
+
+.stat-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.stat-card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+}
+
+.stat-card--accent .stat-card-label {
+  color: rgba(255,255,255,0.6);
+}
+
+.stat-card-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-card--accent .stat-card-value {
+  color: #ffffff;
+}
+
+.stat-value--negative {
+  color: #fca5a5 !important;
+}
+
+.stat-value--danger {
+  color: var(--color-danger);
+}
+
+.stat-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.stat-edit-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--orange-500);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.stat-edit-link:hover {
+  color: var(--orange-400);
+}
+
+.stat-card-action-btn {
+  background: var(--orange-500);
+  color: #ffffff;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  width: fit-content;
+  margin: 0.2rem 0;
+  transition: background var(--transition-fast);
+}
+
+.stat-card-action-btn:hover {
+  background: var(--orange-400);
+}
+
+.stat-card-prompt-text {
+  margin: 0.2rem 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.stat-card-sub {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.stat-card--accent .stat-card-sub {
+  color: rgba(255,255,255,0.45);
+}
+
+/* Trend badge */
+.stat-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.22rem 0.55rem;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.stat-card-badge svg {
+  width: 11px;
+  height: 11px;
+}
+
+.stat-badge--up {
+  background: var(--color-danger-bg);
+  color: var(--color-danger-text);
+  border: 1px solid var(--color-danger-border);
+}
+
+.stat-badge--down {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  border: 1px solid var(--color-success);
+}
+
+.stat-badge--neutral {
+  background: var(--color-bg-raised);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+/* Pill badge */
+.stat-pill-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
+.stat-pill--good {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.stat-pill--warn {
+  background: rgba(249, 115, 22, 0.14);
+  color: var(--orange-500);
+}
+
+.stat-pill--alert {
+  background: var(--color-danger-bg);
+  color: var(--color-danger-text);
+}
+
+/* Responsive */
+@media (max-width: 1120px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card-value {
+    font-size: 1.25rem;
+  }
+}
